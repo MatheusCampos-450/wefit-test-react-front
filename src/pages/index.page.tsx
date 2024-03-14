@@ -11,8 +11,6 @@ interface IHomeProps {
 }
 
 export default function Home({ products }: IHomeProps) {
-  console.log(products);
-
   return (
     <Container>
       {products.map((product, key) => (
