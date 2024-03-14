@@ -2,18 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 
   width: 100%;
-  height: 100%;
-`;
+  max-width: 67.5rem;
 
-export const Title = styled.h1`
-  font-family: Open Sans;
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.5rem;
-
-  color: #ffffff;
+  gap: 1.5rem 1rem;
 `;

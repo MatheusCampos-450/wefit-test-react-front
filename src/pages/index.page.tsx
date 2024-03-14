@@ -5,6 +5,7 @@ import { Registry, container } from "@/@core/infra/container-registry";
 import { ProductsProps } from "@/@core/domain/entities/product";
 
 import { Container } from "./styles";
+import CardMovie from "@/shared/components/molecules/CardMovie";
 interface IHomeProps {
   products: ProductsProps[];
 }
@@ -12,7 +13,13 @@ interface IHomeProps {
 export default function Home({ products }: IHomeProps) {
   console.log(products);
 
-  return <Container></Container>;
+  return (
+    <Container>
+      {products.map((product, key) => (
+        <CardMovie key={key} product={product} />
+      ))}
+    </Container>
+  );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
