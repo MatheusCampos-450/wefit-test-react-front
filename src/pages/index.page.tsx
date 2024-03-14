@@ -1,9 +1,5 @@
-import { Container, Title } from "./styles";
+import { Container } from "./styles";
 
 export default function Home() {
-  return (
-    <Container>
-      <Title>WeFit</Title>
-    </Container>
-  );
+  return <Container></Container>;
 }

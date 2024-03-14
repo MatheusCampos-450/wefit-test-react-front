@@ -5,8 +5,6 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-    font: 400 16px "Inter", sans-serif;
   };
 
   html, body, #__next {
@@ -15,7 +13,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: #2F2E41;
+    background: ${({ theme }) => theme.background};
   }
 
   @media(max-width: 1080px) {
