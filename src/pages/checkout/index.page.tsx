@@ -1,14 +1,15 @@
 import React from "react";
 
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
+import LoaderComponent from "@/shared/components/templates/LoaderComponent";
 
 const Checkout = () => {
-  return <></>;
+  return <LoaderComponent />;
 };
 
 export default Checkout;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   return {
     redirect: {
       destination: "/cart",
