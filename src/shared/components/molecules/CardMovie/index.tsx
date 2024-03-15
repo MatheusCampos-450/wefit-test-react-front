@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Image from "next/image";
 
 import { useGlobalContext } from "@/shared/context";
@@ -26,14 +26,14 @@ const CardMovie: React.FC<ICardMovieProps> = ({ product }) => {
 
   const { cart, addProduct } = useGlobalContext();
 
-  const onClick = () => {
-    console.log("onClick");
-    addProduct(productEntity);
-  };
+  const onClick = () => addProduct(productEntity);
 
-  const total = cart.products.filter(
-    (product) => product.title === productEntity.title,
-  ).length;
+  const TOTAL_PRODUCTS_WITH_SAME_NAME = useMemo(
+    () =>
+      cart.products.filter((product) => product.title === productEntity.title)
+        .length,
+    [cart.products, productEntity.title],
+  );
 
   return (
     <CardMovieContainer>
@@ -51,8 +51,13 @@ const CardMovie: React.FC<ICardMovieProps> = ({ product }) => {
       <MovieTitle>{productEntity.title}</MovieTitle>
       <MoviePrice>{formatBrazilianCurrency(productEntity.price)}</MoviePrice>
 
-      <ButtonStyled type="button" onClick={onClick} isActive={!!total}>
-        <AddCartIcon className="add-cart-icon" /> {total} ADICIONAR AO CARRINHO
+      <ButtonStyled
+        type="button"
+        onClick={onClick}
+        isActive={!!TOTAL_PRODUCTS_WITH_SAME_NAME}
+      >
+        <AddCartIcon className="add-cart-icon" />{" "}
+        {TOTAL_PRODUCTS_WITH_SAME_NAME} ADICIONAR AO CARRINHO
       </ButtonStyled>
     </CardMovieContainer>
   );
