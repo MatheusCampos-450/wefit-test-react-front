@@ -7,6 +7,7 @@ export function getTheme() {
     cardMovieTextColor: "#2F2E41",
 
     blue: "#009EDD",
+    green: "#039B00",
   };
 }
 

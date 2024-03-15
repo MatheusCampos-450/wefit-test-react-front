@@ -9,8 +9,13 @@ import {
   Title,
 } from "./styles";
 import CartIcon from "@/shared/assets/CartIcon";
+import { useGlobalContext } from "@/shared/context";
 
 const Header = () => {
+  const { cart } = useGlobalContext();
+
+  const TOTAL_ITEMS = cart.products.length;
+
   return (
     <HeaderContainer>
       <Title>WeMovies</Title>
@@ -19,7 +24,7 @@ const Header = () => {
         <CartTextContainer>
           <CartTitle>Meu Carrinho</CartTitle>
 
-          <CartItems>0 itens</CartItems>
+          <CartItems>{TOTAL_ITEMS} itens</CartItems>
         </CartTextContainer>
 
         <CartIcon />

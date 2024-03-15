@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import Button from "../../atoms/Button";
 
 export const CardMovieContainer = styled.div`
   display: flex;
@@ -42,4 +43,16 @@ export const MoviePrice = styled.span`
   color: ${({ theme }) => theme.cardMovieTextColor};
 
   margin: 0 0 0.5rem;
+`;
+
+interface IButton {
+  isActive: boolean;
+}
+
+export const ButtonStyled = styled(Button)<IButton>`
+  ${({ theme, isActive }) =>
+    isActive &&
+    css`
+      background: ${theme.green};
+    `}
 `;

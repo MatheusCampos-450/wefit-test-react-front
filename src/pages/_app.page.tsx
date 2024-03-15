@@ -6,6 +6,7 @@ import { getTheme } from "@/shared/styles/theme";
 import GlobalStyles from "@/shared/styles/GlobalStyles";
 import Header from "@/shared/components/organisms/Header";
 import { AppLayoutContainer } from "@/shared/styles/AppLayoutContainer";
+import GlobalContextProvider from "@/shared/context";
 
 export default function App({ Component, pageProps }: AppProps) {
   const theme = getTheme();
@@ -15,8 +16,10 @@ export default function App({ Component, pageProps }: AppProps) {
       <GlobalStyles />
 
       <AppLayoutContainer>
-        <Header />
-        <Component {...pageProps} />
+        <GlobalContextProvider>
+          <Header />
+          <Component {...pageProps} />
+        </GlobalContextProvider>
       </AppLayoutContainer>
     </ThemeProvider>
   );
