@@ -1,40 +1,80 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Teste Técnico WeFit: 
 
-## Getting Started
+Aqui você irá encontrar algumas informações relevantes a certa desse repositório!
 
-First, run the development server:
+<br>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Índice:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Instruções de execução do Desafio ReactJS na máquina local](#instruções-de-execução-do-desafio-reactjs-na-máquina-local)
+  - [Executando em modo desenvolvimento (local)](#executando-em-modo-desenvolvimento-local)
+  - [Executando em modo produção (local)](#executando-em-modo-produção-local)
+- [Links para utilização do projeto em PRODUÇÃO](#links-para-utilização-do-projeto-em-produção)
+- [Tecnologias utilizadas](#tecnologias-utilizadas)
+- [Padrões utilizados](#padrões-utilizados)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<br>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Estrutura do Projeto:
+Dentro desde repositório podemos encontrar os dois desafios propostos:
+- Desafio Javascript
+- Desafio ReactJS
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+#### Segue uma imagem explicando a disposição das pastas e arquivos do projeto:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![image](https://github.com/MatheusCampos-450/wefit-test-react-front/assets/56457600/b7856a33-7deb-4939-9206-a64ada2db252)
 
-## Learn More
+Para visualizar os arquivos do Desafio Javascript [CLIQUE AQUI](https://github.com/MatheusCampos-450/wefit-test-react-front/tree/main/wefit-test).
 
-To learn more about Next.js, take a look at the following resources:
+<br>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Instruções de execução do Desafio ReactJS na máquina local:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+É importante salientar que é necessário que o gerenciador de pacotes ```yarn``` precisa estar instalado em sua máquina.
 
-## Deploy on Vercel
+### Executando em modo desenvolvimento (local):
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Realize o clone do repositório ```git clone https://github.com/MatheusCampos-450/wefit-test-react-front.git```;
+2. Execute o comando ```yarn``` para instalar todas as dependências do projeto;
+3. Execute o comando ```yarn fake-api``` para executar o _**json-server**_;
+4. Execute o comando ```yarn dev``` para executar o projeto em modo desenvolvimento;
+5. Acesse a url [http://localhost:3000](http://localhost:3000).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Executando em modo produção (local):
+
+1. Realize o clone do repositório ```git clone https://github.com/MatheusCampos-450/wefit-test-react-front.git```;
+2. Execute o comando ```yarn``` para instalar todas as dependências do projeto;
+3. Execute o comando ```yarn fake-api``` para executar o _**json-server**_;
+4. Execute o comando ```yarn build``` para realizar o buid da aplicação;
+5. Execute o comando ```yarn start``` para executar o projeto em modo produção (local);
+6. Acesse a url [http://localhost:3000](http://localhost:3000).
+
+<br>
+
+## Links para utização do projeto em PRODUÇÃO:
+
+Realizei o deploy desse projeto na __**Vercel**_, caso queiram realizar testes em outros dispositivos utilizem o link abaixo.
+- [https://wefit-test-react-front.vercel.app/](https://wefit-test-react-front.vercel.app/)
+
+<br>
+
+## Técnologias utilizadas
+
+- ReactJS
+- NextJS
+- Styled-components
+- Typescript
+- Axios
+- Inversify
+- EsLint
+- Prettier
+- Json-server
+- Vercel
+
+<br>
+
+## Padrões utilizados
+
+- Clean Architecture
+- Atomic Design
