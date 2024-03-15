@@ -10,6 +10,8 @@ export const CheckoutSuccessContainer = styled.div`
   flex-direction: column;
 
   width: 100%;
+  max-width: 67.5rem;
+
   padding: 4rem;
 
   border-radius: 0.25rem;
