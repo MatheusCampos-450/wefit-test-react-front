@@ -20,4 +20,14 @@ export const ButtonContainer = styled.button`
   background: ${({ theme }) => theme.blue};
 
   cursor: pointer;
+
+  &:hover {
+    transition: ease-in-out 100ms;
+    transform: scale(1.01);
+  }
+
+  &:active {
+    transition: ease-in-out 5ms;
+    transform: scale(1.03);
+  }
 `;

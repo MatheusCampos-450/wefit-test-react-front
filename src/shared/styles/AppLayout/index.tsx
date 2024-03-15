@@ -1,8 +1,8 @@
-import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
-import { AppLayoutContainer } from "./styles";
 import LoaderIcon from "@/shared/assets/LoaderIcon";
+import { AppLayoutContainer } from "./styles";
 
 interface IAppLayout {
   children: React.ReactNode;
