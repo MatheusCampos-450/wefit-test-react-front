@@ -27,6 +27,9 @@ export const CartContainer = styled.div`
 
   width: 100%;
   max-width: 9rem;
+
+  cursor: pointer;
+  user-select: none;
 `;
 
 export const CartTextContainer = styled.div`

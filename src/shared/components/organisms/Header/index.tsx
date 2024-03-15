@@ -10,17 +10,21 @@ import {
 } from "./styles";
 import CartIcon from "@/shared/assets/CartIcon";
 import { useGlobalContext } from "@/shared/context";
+import { useRouter } from "next/router";
 
 const Header = () => {
-  const { cart } = useGlobalContext();
+  const router = useRouter();
 
-  const TOTAL_ITEMS = cart.products.length;
+  const { cart } = useGlobalContext();
+  const TOTAL_ITEMS = cart.allProducts.length;
+
+  const redirectToCart = () => router.push("cart");
 
   return (
     <HeaderContainer>
       <Title>WeMovies</Title>
 
-      <CartContainer>
+      <CartContainer onClick={redirectToCart}>
         <CartTextContainer>
           <CartTitle>Meu Carrinho</CartTitle>
 

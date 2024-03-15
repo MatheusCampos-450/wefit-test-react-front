@@ -30,9 +30,10 @@ const CardMovie: React.FC<ICardMovieProps> = ({ product }) => {
 
   const TOTAL_PRODUCTS_WITH_SAME_NAME = useMemo(
     () =>
-      cart.products.filter((product) => product.title === productEntity.title)
-        .length,
-    [cart.products, productEntity.title],
+      cart.allProducts.filter(
+        (product) => product.title === productEntity.title,
+      ).length,
+    [cart.allProducts, productEntity.title],
   );
 
   return (

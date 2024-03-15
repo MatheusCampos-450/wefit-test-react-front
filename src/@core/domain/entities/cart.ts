@@ -1,3 +1,4 @@
+import { removeDuplicates } from "@/shared/utils/removeDuplicates";
 import { Product } from "./product";
 
 export interface CartProps {
@@ -12,6 +13,10 @@ export class Cart {
   }
 
   removeProduct(productId: string) {
+    console.log(productId, "cheguei aqui");
+
+    console.log(this.props.products, "products");
+
     this.props.products = this.props.products.filter(
       (product) => product.id !== productId,
     );
@@ -30,7 +35,17 @@ export class Cart {
     );
   }
 
-  get products() {
+  get productsSubtotal() {
+    const products = removeDuplicates(
+      this.props.products.map((product) => product.props),
+    );
+
+    const productsEntity = products.map((product) => new Product(product));
+
+    return productsEntity;
+  }
+
+  get allProducts() {
     return this.props.products;
   }
 }

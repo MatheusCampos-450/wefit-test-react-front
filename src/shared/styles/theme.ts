@@ -6,6 +6,10 @@ export function getTheme() {
     cardMovieBackground: "#ffffff",
     cardMovieTextColor: "#2F2E41",
 
+    cartBackground: "#ffffff",
+    cartTextColor: "#2F2E41",
+    cartColumnTitleColor: "#999999",
+
     blue: "#009EDD",
     green: "#039B00",
   };
