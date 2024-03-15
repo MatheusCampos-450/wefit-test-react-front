@@ -10,6 +10,7 @@ export const EmptyCartContainer = styled.div`
 
   width: 100%;
   padding: 4rem;
+  max-width: 67.5rem;
 
   border-radius: 0.25rem;
   background: ${({ theme }) => theme.cartBackground};
