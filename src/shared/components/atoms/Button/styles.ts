@@ -18,4 +18,6 @@ export const ButtonContainer = styled.button`
   border: none;
   border-radius: 0.25rem;
   background: ${({ theme }) => theme.blue};
+
+  cursor: pointer;
 `;

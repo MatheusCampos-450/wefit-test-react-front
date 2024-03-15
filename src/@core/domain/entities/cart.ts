@@ -1,5 +1,6 @@
 import { removeDuplicates } from "@/shared/utils/removeDuplicates";
 import { Product } from "./product";
+import { removeLastItem } from "@/shared/utils/removeLastItem";
 
 export interface CartProps {
   products: Product[];
@@ -13,19 +14,30 @@ export class Cart {
   }
 
   removeProduct(productId: string) {
-    console.log(productId, "cheguei aqui");
+    const productsWithSameId = this.props.products.filter(
+      (product) => product.id === productId,
+    );
 
-    console.log(this.props.products, "products");
-
-    this.props.products = this.props.products.filter(
+    const productsWithoutId = this.props.products.filter(
       (product) => product.id !== productId,
     );
+
+    const newProductsArray = [
+      ...productsWithoutId,
+      ...removeLastItem(productsWithSameId),
+    ];
+
+    this.props.products = newProductsArray;
   }
 
   clearProduct(productTitle: string) {
     this.props.products = this.props.products.filter(
       (product) => product.title !== productTitle,
     );
+  }
+
+  clearCart() {
+    this.props.products = [];
   }
 
   get total() {

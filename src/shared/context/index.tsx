@@ -1,4 +1,5 @@
 import { AddProductInCartUseCase } from "@/@core/application/cart/add-product-in-cart.use-case";
+import { ClearCartUseCase } from "@/@core/application/cart/clear-cart.use-case";
 import { ClearProductCartUseCase } from "@/@core/application/cart/clear-product-cart.use-case";
 import { GetCartUseCase } from "@/@core/application/cart/get-cart.use-case";
 import { RemoveProductFromCartUseCase } from "@/@core/application/cart/remove-product-from-cart.use-case";
@@ -17,12 +18,16 @@ const removeProducFromCartUseCase = container.get<RemoveProductFromCartUseCase>(
 const clearProductCartUseCase = container.get<ClearProductCartUseCase>(
   Registry.ClearProductCartUseCase,
 );
+const clearCartUseCase = container.get<ClearCartUseCase>(
+  Registry.ClearCartUseCase,
+);
 
 interface IGlobalContext {
   cart: Cart;
   addProduct: (product: Product) => void;
   removeProduct: (productId: string) => void;
   clearProduct: (productTitle: string) => void;
+  clearCart: () => void;
 }
 
 const defaultContext: IGlobalContext = {
@@ -30,6 +35,7 @@ const defaultContext: IGlobalContext = {
   addProduct: () => {},
   removeProduct: () => {},
   clearProduct: () => {},
+  clearCart: () => {},
 };
 
 const GlobalContext = createContext(defaultContext);
@@ -40,8 +46,6 @@ interface IGlobalContextProvider {
 
 export const GlobalContextProvider = ({ children }: IGlobalContextProvider) => {
   const [cart, setCart] = useState<Cart>(defaultContext.cart);
-
-  console.log(cart, "cart");
 
   const addProduct = (product: Product) => {
     console.log(product, "addProduct");
@@ -60,6 +64,11 @@ export const GlobalContextProvider = ({ children }: IGlobalContextProvider) => {
     setCart(cart);
   };
 
+  const clearCart = () => {
+    const cart = clearCartUseCase.execute();
+    setCart(cart);
+  };
+
   const reload = () => {
     const cart = getCartUseCase.execute();
     setCart(cart);
@@ -71,7 +80,7 @@ export const GlobalContextProvider = ({ children }: IGlobalContextProvider) => {
 
   return (
     <GlobalContext.Provider
-      value={{ cart, addProduct, removeProduct, clearProduct }}
+      value={{ cart, addProduct, removeProduct, clearProduct, clearCart }}
     >
       {children}
     </GlobalContext.Provider>
@@ -82,8 +91,6 @@ export default GlobalContextProvider;
 
 export const useGlobalContext = () => {
   const context = useContext(GlobalContext);
-
-  console.log(context);
 
   if (!context || Object.keys(context).length === 0) {
     throw new Error(

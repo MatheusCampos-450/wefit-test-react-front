@@ -1,7 +1,7 @@
 import React from "react";
 
 interface IIconProps {
-  className: string;
+  className?: string;
 }
 
 const LessIcon = ({ className }: IIconProps) => {

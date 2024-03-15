@@ -1,12 +1,12 @@
 import { Cart } from "@/@core/domain/entities/cart";
 import { CartGateway } from "@/@core/domain/gateways/cart.gateway";
 
-export class RemoveProductFromCartUseCase {
+export class ClearCartUseCase {
   constructor(private cartGateway: CartGateway) {}
 
-  execute(productId: string): Cart {
+  execute(): Cart {
     const cart = this.cartGateway.get();
-    cart.removeProduct(productId);
+    cart.clearCart();
     this.cartGateway.save(cart);
     return cart;
   }

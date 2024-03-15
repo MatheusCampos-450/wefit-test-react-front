@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
 const throttle = (callback: () => void, delay: number) => {
-  let timerId: NodeJS.Timeout;
+  let timerId: NodeJS.Timeout | undefined;
 
   return () => {
     if (!timerId) {
       timerId = setTimeout(() => {
         callback();
-        clearTimeout(timerId);
+        timerId = undefined;
       }, delay);
     }
   };
@@ -30,7 +30,7 @@ const useWindowSize = () => {
       });
     };
 
-    const throttledHandleResize = throttle(handleResize, 200); // Throttle para 200ms
+    const throttledHandleResize = throttle(handleResize, 100); // Throttle para 200ms
 
     window.addEventListener("resize", throttledHandleResize);
 

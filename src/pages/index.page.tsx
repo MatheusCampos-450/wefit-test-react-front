@@ -27,8 +27,6 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const products = await useCase.execute();
 
-  console.log(products);
-
   return {
     props: {
       products: products.map((product) => product.toJSON()),

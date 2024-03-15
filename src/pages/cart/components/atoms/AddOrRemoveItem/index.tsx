@@ -17,7 +17,7 @@ interface IAddOrRemoveItemProps {
 }
 
 const AddOrRemoveItem = ({ productGrouped }: IAddOrRemoveItemProps) => {
-  const { cart } = useGlobalContext();
+  const { removeProduct, addProduct } = useGlobalContext();
 
   const product = productGrouped[productGrouped.length - 1];
 
@@ -25,17 +25,14 @@ const AddOrRemoveItem = ({ productGrouped }: IAddOrRemoveItemProps) => {
     <AddOrRemoveItemContainer>
       <ButtonTransparent
         type="button"
-        onClick={() => {
-          console.log("passei aqui");
-          cart.removeProduct(product.id);
-        }}
+        onClick={() => removeProduct(product.id)}
       >
         <LessIcon className="less-icon" />
       </ButtonTransparent>
 
       <QuantityText>{productGrouped.length}</QuantityText>
 
-      <ButtonTransparent type="button" onClick={() => cart.addProduct(product)}>
+      <ButtonTransparent type="button" onClick={() => addProduct(product)}>
         <MoreIcon className="more-icon" />
       </ButtonTransparent>
     </AddOrRemoveItemContainer>

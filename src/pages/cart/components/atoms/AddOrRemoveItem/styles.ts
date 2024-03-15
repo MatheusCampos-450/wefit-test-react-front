@@ -25,6 +25,10 @@ export const QuantityText = styled.span`
   border: 0.063rem solid #d9d9d9;
 
   user-select: none;
+
+  @media (max-width: 375px) {
+    width: 2rem;
+  }
 `;
 
 export const ButtonTransparent = styled.button`

@@ -10,6 +10,7 @@ import { GetCartUseCase } from "../application/cart/get-cart.use-case";
 import { AddProductInCartUseCase } from "../application/cart/add-product-in-cart.use-case";
 import { RemoveProductFromCartUseCase } from "../application/cart/remove-product-from-cart.use-case";
 import { ClearProductCartUseCase } from "../application/cart/clear-product-cart.use-case";
+import { ClearCartUseCase } from "../application/cart/clear-cart.use-case";
 
 export const Registry = {
   AxiosAdapter: Symbol.for("AxiosAdapter"),
@@ -23,6 +24,7 @@ export const Registry = {
   AddProductInCartUseCase: Symbol.for("AddProductInCartUseCase"),
   RemoveProductFromCartUseCase: Symbol.for("RemoveProductFromCartUseCase"),
   ClearProductCartUseCase: Symbol.for("ClearProductCartUseCase"),
+  ClearCartUseCase: Symbol.for("ClearCartUseCase"),
 };
 
 export const container = new Container();
@@ -62,4 +64,8 @@ container.bind(Registry.ClearProductCartUseCase).toDynamicValue((context) => {
   return new ClearProductCartUseCase(
     context.container.get(Registry.CartGateway),
   );
+});
+
+container.bind(Registry.ClearCartUseCase).toDynamicValue((context) => {
+  return new ClearCartUseCase(context.container.get(Registry.CartGateway));
 });

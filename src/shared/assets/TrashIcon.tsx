@@ -1,10 +1,10 @@
 import React from "react";
 
 interface IIconProps {
-  className: string;
+  className?: string;
 }
 
-const LessIcon = ({ className }: IIconProps) => {
+const TrashIcon = ({ className }: IIconProps) => {
   return (
     <svg
       className={className}
@@ -22,4 +22,4 @@ const LessIcon = ({ className }: IIconProps) => {
   );
 };
 
-export default LessIcon;
+export default TrashIcon;
