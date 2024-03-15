@@ -9,5 +9,7 @@ export const Container = styled.div`
   width: 100%;
   max-width: 67.5rem;
 
+  padding: 0 0 2rem;
+
   gap: 1.5rem 1rem;
 `;

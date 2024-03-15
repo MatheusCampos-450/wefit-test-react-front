@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { css } from "styled-components";
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -11,16 +12,31 @@ export const HeaderContainer = styled.header`
   margin: 1.5rem 0;
 `;
 
-export const Title = styled.h1`
+interface IComponent {
+  isActiveOnClick: boolean;
+}
+
+export const Title = styled.h1<IComponent>`
   font-family: Open Sans;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.688rem;
 
   color: ${({ theme }) => theme.textColor};
+
+  ${({ isActiveOnClick }) =>
+    isActiveOnClick &&
+    css`
+      cursor: pointer;
+
+      &:hover {
+        transition: ease-in-out 200ms;
+        transform: translateX(0.125rem);
+      }
+    `}
 `;
 
-export const CartContainer = styled.div`
+export const CartContainer = styled.div<IComponent>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,8 +44,18 @@ export const CartContainer = styled.div`
   width: 100%;
   max-width: 9rem;
 
-  cursor: pointer;
   user-select: none;
+
+  ${({ isActiveOnClick }) =>
+    isActiveOnClick &&
+    css`
+      cursor: pointer;
+
+      &:hover {
+        transition: ease-in-out 200ms;
+        transform: translateX(-0.125rem);
+      }
+    `}
 `;
 
 export const CartTextContainer = styled.div`

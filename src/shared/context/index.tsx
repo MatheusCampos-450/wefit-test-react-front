@@ -48,8 +48,6 @@ export const GlobalContextProvider = ({ children }: IGlobalContextProvider) => {
   const [cart, setCart] = useState<Cart>(defaultContext.cart);
 
   const addProduct = (product: Product) => {
-    console.log(product, "addProduct");
-
     const cart = addProducInCartUseCase.execute(product);
     setCart(cart);
   };

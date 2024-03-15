@@ -18,13 +18,20 @@ const Header = () => {
   const { cart } = useGlobalContext();
   const TOTAL_ITEMS = cart.allProducts.length;
 
+  const isHome = router.asPath === "/";
+  const isCart = router.asPath === "/cart";
+
+  const redirectToHome = () => router.push("/");
+
   const redirectToCart = () => router.push("cart");
 
   return (
     <HeaderContainer>
-      <Title>WeMovies</Title>
+      <Title isActiveOnClick={!isHome} onClick={redirectToHome}>
+        WeMovies
+      </Title>
 
-      <CartContainer onClick={redirectToCart}>
+      <CartContainer isActiveOnClick={!isCart} onClick={redirectToCart}>
         <CartTextContainer>
           <CartTitle>Meu Carrinho</CartTitle>
 
