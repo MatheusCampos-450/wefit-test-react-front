@@ -50,10 +50,14 @@ Para visualizar os arquivos do Desafio Javascript [CLIQUE AQUI](https://github.c
 5. Execute o comando ```yarn start``` para executar o projeto em modo produção (local);
 6. Acesse a url [http://localhost:3000](http://localhost:3000).
 
+<br>
+
 ## Links para utização do projeto em PRODUÇÃO:
 
 Realizei o deploy desse projeto na __**Vercel**_, caso queiram realizar testes em outros dispositivos utilizem o link abaixo.
 - [https://wefit-test-react-front.vercel.app/](https://wefit-test-react-front.vercel.app/)
+
+<br>
 
 ## Técnologias utilizadas
 
@@ -67,6 +71,8 @@ Realizei o deploy desse projeto na __**Vercel**_, caso queiram realizar testes e
 - Prettier
 - Json-server
 - Vercel
+
+<br>
 
 ## Padrões utilizados
 
