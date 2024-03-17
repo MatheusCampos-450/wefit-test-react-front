@@ -54,7 +54,7 @@ Para visualizar os arquivos do Desafio Javascript [CLIQUE AQUI](https://github.c
 
 ## Links para utização do projeto em PRODUÇÃO:
 
-Realizei o deploy desse projeto na __**Vercel**_, caso queiram realizar testes em outros dispositivos utilizem o link abaixo.
+Realizei o deploy desse projeto na _**Vercel**_, caso queiram realizar testes em outros dispositivos utilizem o link abaixo.
 - [https://wefit-test-react-front.vercel.app/](https://wefit-test-react-front.vercel.app/)
 
 <br>
